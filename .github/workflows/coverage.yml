@@ -16,10 +16,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore ./SpaceBattle.Lib
+        run: dotnet restore spacebattle/SpaceBattle.Lib
 
       - name: Build
-        run: cd SpaceBattle.Lib && dotnet build --no-restore /p:ContinuousIntegrationBuild=true
+        run: cd spacebattle/SpaceBattle.Lib && dotnet build --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: SpaceBattle test
-        run: cd ./SpaceBattle.Lib.Tests/ && dotnet test /p:CollectCoverage=true
+        run: cd spacebattle/SpaceBattle.Lib.Tests/ && dotnet test /p:CollectCoverage=true
