@@ -1,7 +1,7 @@
-namespace SpaceBattle.Lib.Tests;
+﻿namespace SpaceBattle.Lib.Tests;
 
-using Xunit;
 using Moq;
+using Xunit;
 
 public class VectorTests
 {

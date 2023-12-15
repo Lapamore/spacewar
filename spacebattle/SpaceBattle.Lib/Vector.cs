@@ -1,4 +1,4 @@
-namespace SpaceBattle.Lib
+﻿namespace SpaceBattle.Lib
 {
     public class Vector
     {
@@ -17,7 +17,7 @@ namespace SpaceBattle.Lib
                 return false;
             }
 
-            Vector other = (Vector)obj;
+            var other = (Vector)obj;
             return X == other.X & Y == other.Y;
         }
 

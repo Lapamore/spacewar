@@ -1,19 +1,14 @@
-﻿using TechTalk.SpecFlow;
-using SpaceBattle.Lib;
+﻿using SpaceBattle.Lib;
+using TechTalk.SpecFlow;
 
 namespace XUnit.Tests
 {
     [Binding]
     public sealed class UnitTest1
     {
-        private readonly ScenarioContext _context;
-        private Mock<IMovable> movable = new Mock<IMovable>();
-        private Exception? exception;
 
-        public UnitTest1(ScenarioContext context)
-        {
-            _context = context;
-        }
+        private readonly Mock<IMovable> movable = new Mock<IMovable>();
+        private Exception? exception;
 
         [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
         public void GivenSpacecraftSetLocation(int x, int y)
@@ -50,7 +45,7 @@ namespace XUnit.Tests
         {
             try
             {
-                MoveCommand moveCommand = new MoveCommand(movable.Object);
+                var moveCommand = new MoveCommand(movable.Object);
                 moveCommand.Execute();
             }
             catch (Exception e)
@@ -68,8 +63,7 @@ namespace XUnit.Tests
         [Then(@"возникает ошибка Exception")]
         public void ThenErrorException()
         {
-            Assert.IsType<Exception>(this.exception);
+            Assert.IsType<Exception>(exception);
         }
-        
     }
 }
