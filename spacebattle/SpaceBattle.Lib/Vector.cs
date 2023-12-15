@@ -12,19 +12,14 @@ namespace SpaceBattle.Lib
         }
         public override bool Equals(object obj)
         {
-            //if (obj == null || GetType() != obj.GetType())
-            //{
-            //    return false;
-            //}
-
             Vector other = (Vector)obj;
             return X == other.X & Y == other.Y;
         }
 
-        //public override int GetHashCode()
-        //{
-        //    return HashCode.Combine(X, Y);
-        //}
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(X, Y);
+        }
 
         public static Vector operator +(Vector v1, Vector v2)
         {

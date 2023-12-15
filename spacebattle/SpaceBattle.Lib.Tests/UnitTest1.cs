@@ -70,5 +70,6 @@ namespace XUnit.Tests
         {
             Assert.IsType<Exception>(this.exception);
         }
+        
     }
 }
