@@ -20,6 +20,9 @@ jobs:
 
       - name: Build
         run: cd spacebattle/SpaceBattle.Lib && dotnet build --no-restore /p:ContinuousIntegrationBuild=true && cd ..
+        
+      - name: Verify format
+        run: dotnet format --verify-no-changes && cd ..
 
       - name: SpaceBattle test
         run: cd spacebattle/SpaceBattle.Lib.Tests/ && dotnet test /p:CollectCoverage=true
