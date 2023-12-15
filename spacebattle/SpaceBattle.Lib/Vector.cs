@@ -10,8 +10,13 @@ namespace SpaceBattle.Lib
             X = x;
             Y = y;
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
             Vector other = (Vector)obj;
             return X == other.X & Y == other.Y;
         }
