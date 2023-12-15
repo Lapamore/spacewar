@@ -1,0 +1,69 @@
+{
+  "SpaceBattle.Lib.dll": {
+    "/home/dmitry/Рабочий стол/Programming /SpaceWar/spacebattle/SpaceBattle.Lib/Angle.cs": {
+      "SpaceBattle.Lib.Angle": {
+        "System.Int32 SpaceBattle.Lib.Angle::get_X()": {
+          "Lines": {
+            "5": 14
+          },
+          "Branches": []
+        },
+        "SpaceBattle.Lib.Angle SpaceBattle.Lib.Angle::op_Addition(SpaceBattle.Lib.Angle,SpaceBattle.Lib.Angle)": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": []
+        },
+        "System.Boolean SpaceBattle.Lib.Angle::Equals(System.Object)": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.Angle::.ctor(System.Int32)": {
+          "Lines": {
+            "6": 10,
+            "7": 10,
+            "8": 10,
+            "9": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/dmitry/Рабочий стол/Programming /SpaceWar/spacebattle/SpaceBattle.Lib/ITurn.cs": {
+      "SpaceBattle.Lib.TurnCommand": {
+        "System.Void SpaceBattle.Lib.TurnCommand::Execute()": {
+          "Lines": {
+            "18": 4,
+            "19": 4,
+            "20": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 SpaceBattle.Lib.TurnCommand::GetHashCode()": {
+          "Lines": {
+            "22": 2,
+            "23": 2,
+            "24": 2
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.TurnCommand::.ctor(SpaceBattle.Lib.ITurn)": {
+          "Lines": {
+            "12": 5,
+            "13": 5,
+            "14": 5,
+            "15": 5
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
