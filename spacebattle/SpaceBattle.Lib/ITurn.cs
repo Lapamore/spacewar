@@ -18,10 +18,5 @@
         {
             turn.AngleNow += turn.AngleSpeed;
         }
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(turn.AngleNow, turn.AngleSpeed);
-        }
     }
-
 }
