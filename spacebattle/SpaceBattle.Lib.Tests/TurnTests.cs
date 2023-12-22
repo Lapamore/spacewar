@@ -59,7 +59,7 @@ namespace XUnit.Tests
             movable.VerifySet(m => m.AngleNow = new Angle(correctAngle), Times.Once);
         }
 
-        [Then(@"возникает ошибка Exception")]
+        [Then(@"возникает ошибка")]
         public void ThenErrorException()
         {
             Assert.IsType<Exception>(exception);
