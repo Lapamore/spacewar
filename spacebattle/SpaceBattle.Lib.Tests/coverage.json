@@ -1,0 +1,88 @@
+{
+  "SpaceBattle.Lib.dll": {
+    "C:\\Users\\Lostg\\OneDrive\\Рабочий стол\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\Angle.cs": {
+      "SpaceBattle.Lib.Angle": {
+        "System.Int32 SpaceBattle.Lib.Angle::get_X()": {
+          "Lines": {
+            "7": 33
+          },
+          "Branches": []
+        },
+        "SpaceBattle.Lib.Angle SpaceBattle.Lib.Angle::op_Addition(SpaceBattle.Lib.Angle,SpaceBattle.Lib.Angle)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1
+          },
+          "Branches": []
+        },
+        "System.Boolean SpaceBattle.Lib.Angle::Equals(System.Object)": {
+          "Lines": {
+            "20": 6,
+            "21": 6,
+            "22": 2,
+            "23": 2,
+            "26": 4,
+            "27": 6
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Int32 SpaceBattle.Lib.Angle::GetHashCode()": {
+          "Lines": {
+            "30": 4,
+            "31": 4,
+            "32": 4
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.Angle::.ctor(System.Int32)": {
+          "Lines": {
+            "9": 19,
+            "10": 19,
+            "11": 19,
+            "12": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\OneDrive\\Рабочий стол\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\ITurn.cs": {
+      "SpaceBattle.Lib.TurnCommand": {
+        "System.Void SpaceBattle.Lib.TurnCommand::Execute()": {
+          "Lines": {
+            "18": 4,
+            "19": 4,
+            "20": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.TurnCommand::.ctor(SpaceBattle.Lib.ITurn)": {
+          "Lines": {
+            "12": 4,
+            "13": 4,
+            "14": 4,
+            "15": 4
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
