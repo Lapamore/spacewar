@@ -1,4 +1,4 @@
-namespace SpaceBattle.Lib.Tests
+﻿namespace SpaceBattle.Lib.Tests
 {
     using Xunit;
 
