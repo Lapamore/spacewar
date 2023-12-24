@@ -7,6 +7,10 @@ nupkg/
 
 # Visual Studio Code
 .vscode/
+spacebattle/SpaceBattle.Lib.Tests/SpaceBattle.Lib.Tests.csproj
+spacebattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj
+spacebattle/SpaceBattle.Lib.Tests/TestResults.cobertura.xml
+spacebattle/SpaceBattle.Lib.Tests/coverage.json
 
 # Rider
 .idea/
