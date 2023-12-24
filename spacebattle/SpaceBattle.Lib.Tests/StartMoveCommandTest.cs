@@ -1,4 +1,4 @@
-using SpaceBattle.Lib;
+﻿using SpaceBattle.Lib;
 
 public class StartCommandTest
 {
@@ -12,7 +12,7 @@ public class StartCommandTest
     public void Execute_RegistersTargetAndPuchesMovingCommand_WhenCalled()
     {
         var moveCommandStartable = new Mock<IMoveCommandStartable>();
-        moveCommandStartable.Setup(m=>m.target).Returns(new Mock<IUObject>().Object);
-        moveCommandStartable.Setup(m=>m.property).Returns(new Dictionary<string, object>());
+        moveCommandStartable.Setup(m => m.target).Returns(new Mock<IUObject>().Object);
+        moveCommandStartable.Setup(m => m.property).Returns(new Dictionary<string, object>());
     }
 }

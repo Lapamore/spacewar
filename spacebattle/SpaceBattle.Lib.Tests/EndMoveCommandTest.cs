@@ -1,6 +1,4 @@
-using SpaceBattle.Lib;
-
-namespace SpaceBattle.Lib.Tests;
+﻿namespace SpaceBattle.Lib.Tests;
 
 public class EndMoveCommandExecutionTest
 {
@@ -55,5 +53,4 @@ public class BridgeCommandExecutionTest
         bridge.Execute();
         internalCommand.Verify(i => i.Execute(), Times.Never());
     }
-    
 }
