@@ -46,10 +46,10 @@ nupkg/
 # Ignore Fleet project files
 .fleet/
 
+# Ignore SpaceBattle.Lib project files
+spacebattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj
+
 # Ignore SpaceBattle.Lib.Tests project files
 spacebattle/SpaceBattle.Lib.Tests/SpaceBattle.Lib.Tests.csproj
 spacebattle/SpaceBattle.Lib.Tests/TestResults.cobertura.xml
 spacebattle/SpaceBattle.Lib.Tests/coverage.json
-
-# Ignore SpaceBattle.Lib project files
-spacebattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj
