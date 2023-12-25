@@ -1,4 +1,4 @@
-using Hwdtech;
+﻿using Hwdtech;
 using Hwdtech.Ioc;
 namespace SpaceBattle.Lib.Tests;
 using IDict = IDictionary<int, object>;
@@ -54,5 +54,4 @@ public class CollisionTreeCommandTest
         Assert.True(((IDict)((IDict)resultTree[9])[7]).ContainsKey(2));
         Assert.True(((IDict)((IDict)((IDict)resultTree[9])[7])[2]).ContainsKey(1));
     }
-    
 }

@@ -1,4 +1,4 @@
-using Hwdtech;
+﻿using Hwdtech;
 
 namespace SpaceBattle.Lib;
 
@@ -18,11 +18,11 @@ public class TrieBuilder : ITrieBuilder
     {
         ReadFileData(path).ToList().ForEach(vector =>
         {
-            var collisionTree  = IoC.Resolve<IDictionary<int, object>>("Game.CollisionTree");
+            var collisionTree = IoC.Resolve<IDictionary<int, object>>("Game.CollisionTree");
             vector.ToList().ForEach(f =>
             {
                 collisionTree.TryAdd(f, new Dictionary<int, object>());
-                collisionTree  = (IDictionary<int, object>)collisionTree [f];
+                collisionTree = (IDictionary<int, object>)collisionTree[f];
             });
         });
     }
