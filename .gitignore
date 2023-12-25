@@ -1,32 +1,25 @@
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
-nupkg/
-
-# Visual Studio Code
+# Ignore Visual Studio Code
 .vscode/
 
-# Rider
+# Ignore Rider
 .idea/
 
-# Visual Studio
+# Ignore Visual Studio
 .vs/
 
-# Fleet
+# Ignore Fleet
 .fleet/
 
-# Code Rush
+# Ignore Code Rush
 .cr/
 
-# User-specific files
+# Ignore User-specific files
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build results
+# Ignore Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -41,3 +34,22 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# Ignore specific files
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Ignore Fleet project files
+.fleet/
+
+# Ignore SpaceBattle.Lib.Tests project files
+spacebattle/SpaceBattle.Lib.Tests/SpaceBattle.Lib.Tests.csproj
+spacebattle/SpaceBattle.Lib.Tests/TestResults.cobertura.xml
+spacebattle/SpaceBattle.Lib.Tests/coverage.json
+
+# Ignore SpaceBattle.Lib project files
+spacebattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj

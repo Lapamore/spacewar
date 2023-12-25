@@ -1,6 +1,6 @@
 {
   "SpaceBattle.Lib.dll": {
-    "C:\\Users\\Lostg\\OneDrive\\Рабочий стол\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\Angle.cs": {
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\Angle.cs": {
       "SpaceBattle.Lib.Angle": {
         "System.Int32 SpaceBattle.Lib.Angle::get_X()": {
           "Lines": {
@@ -63,7 +63,78 @@
         }
       }
     },
-    "C:\\Users\\Lostg\\OneDrive\\Рабочий стол\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\ITurn.cs": {
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\CheckCollisionCommand.cs": {
+      "SpaceBattle.Lib.CheckCollisionCommand": {
+        "System.Void SpaceBattle.Lib.CheckCollisionCommand::Execute()": {
+          "Lines": {
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "22": 2,
+            "24": 2,
+            "26": 13,
+            "28": 1,
+            "29": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.CheckCollisionCommand::.ctor(SpaceBattle.Lib.IUObject,SpaceBattle.Lib.IUObject)": {
+          "Lines": {
+            "9": 2,
+            "10": 2,
+            "11": 2,
+            "12": 2,
+            "13": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\FindVariationsCommand.cs": {
+      "SpaceBattle.Lib.InitFindVariationsCommand": {
+        "System.Void SpaceBattle.Lib.InitFindVariationsCommand::Execute()": {
+          "Lines": {
+            "8": 2,
+            "9": 2,
+            "10": 2,
+            "11": 2,
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 22,
+            "17": 2,
+            "18": 4,
+            "19": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\IMovable.cs": {
+      "SpaceBattle.Lib.MoveCommand": {
+        "System.Void SpaceBattle.Lib.MoveCommand::Execute()": {
+          "Lines": {
+            "19": 4,
+            "20": 4,
+            "21": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.MoveCommand::.ctor(SpaceBattle.Lib.IMovable)": {
+          "Lines": {
+            "13": 4,
+            "14": 4,
+            "15": 4,
+            "16": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\ITurn.cs": {
       "SpaceBattle.Lib.TurnCommand": {
         "System.Void SpaceBattle.Lib.TurnCommand::Execute()": {
           "Lines": {
@@ -79,6 +150,93 @@
             "13": 4,
             "14": 4,
             "15": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\бумбурурик)\\Desktop\\ООАиП\\SpaceWar\\spacebattle\\SpaceBattle.Lib\\Vector.cs": {
+      "SpaceBattle.Lib.Vector": {
+        "System.Int32 SpaceBattle.Lib.Vector::get_X()": {
+          "Lines": {
+            "5": 27
+          },
+          "Branches": []
+        },
+        "System.Int32 SpaceBattle.Lib.Vector::get_Y()": {
+          "Lines": {
+            "6": 27
+          },
+          "Branches": []
+        },
+        "System.Boolean SpaceBattle.Lib.Vector::Equals(System.Object)": {
+          "Lines": {
+            "14": 6,
+            "15": 6,
+            "16": 2,
+            "17": 2,
+            "20": 4,
+            "21": 4,
+            "22": 6
+          },
+          "Branches": [
+            {
+              "Line": 15,
+              "Offset": 2,
+              "EndOffset": 4,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 5
+            },
+            {
+              "Line": 15,
+              "Offset": 2,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 15,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 15,
+              "Offset": 26,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Int32 SpaceBattle.Lib.Vector::GetHashCode()": {
+          "Lines": {
+            "25": 1,
+            "26": 1,
+            "27": 1
+          },
+          "Branches": []
+        },
+        "SpaceBattle.Lib.Vector SpaceBattle.Lib.Vector::op_Addition(SpaceBattle.Lib.Vector,SpaceBattle.Lib.Vector)": {
+          "Lines": {
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.Vector::.ctor(System.Int32,System.Int32)": {
+          "Lines": {
+            "8": 16,
+            "9": 16,
+            "10": 16,
+            "11": 16,
+            "12": 16
           },
           "Branches": []
         }
