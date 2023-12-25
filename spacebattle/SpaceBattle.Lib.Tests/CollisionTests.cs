@@ -3,9 +3,9 @@ using Hwdtech.Ioc;
 namespace SpaceBattle.Lib.Tests;
 using IDict = IDictionary<int, object>;
 
-public class CollisionTreeCommandTest
+public class CollisionCmdTest
 {
-    public CollisionTreeCommandTest()
+    public CollisionCmdTest()
     {
         new InitScopeBasedIoCImplementationCommand().Execute();
         IoC.Resolve<Hwdtech.ICommand>(
@@ -33,14 +33,14 @@ public class CollisionTreeCommandTest
     }
 
     [Fact]
-    public void IncorrectFilePathInputThrowExceptionWhenBuildingTree()
+    public void TestInvalidFilePathThrowsException()
     {
         var buildingTree = new BuildCollisionTreeCommand("error_files.txt");
         Assert.Throws<FileNotFoundException>(buildingTree.Execute);
     }
 
     [Fact]
-    public void SuccessfullyBuildingCollisionTreeFromFileWithSomBranches()
+    public void TestBuildingCollisionTreeFromFile()
     {
         var path = "../../../CollisionFile/collision_file.txt";
         var buildingTree = new BuildCollisionTreeCommand(path);
