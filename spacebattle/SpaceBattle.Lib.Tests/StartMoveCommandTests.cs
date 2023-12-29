@@ -32,7 +32,7 @@ public class StartMovementTest
 
         mockStartable.SetupGet(x => x.UObject).Returns(mockUObject.Object).Verifiable();
         mockStartable.SetupGet(x => x.Parameters).Returns(
-            new Dictionary<string, object> { { "Velocity", new Vector(2, 1) } } // исправленный код
+            new Dictionary<string, object> { { "Velocity", new Vector(2, 1) } }
         ).Verifiable();
 
         var StartMoveCommand = new StartMoveCommand(mockStartable.Object);
