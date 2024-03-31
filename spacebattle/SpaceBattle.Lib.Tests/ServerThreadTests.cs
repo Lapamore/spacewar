@@ -28,10 +28,11 @@ public class ServerThreadTests
     [Fact]
     public void HardStopThreadTest()
     {
-        var st2 = IoC.Resolve<ServerThread>("CreateWithStartThread", "2");
+        var id2 = Guid.NewGuid().ToString();
+        var st2 = IoC.Resolve<ServerThread>("CreateWithStartThread", id2);
         var mre = new ManualResetEvent(false);
-        var hardstop = IoC.Resolve<ICommand>("HardStop", "2", () => { mre.Set(); });
-        var send = IoC.Resolve<ISender>("SenderGetByID", "2");
+        var hardstop = IoC.Resolve<ICommand>("HardStop", id2, () => { mre.Set(); });
+        var send = IoC.Resolve<ISender>("SenderGetByID", id2);
         var sendcommand = IoC.Resolve<ICommand>("SendCommand", send, hardstop);
 
         sendcommand.Execute();
@@ -42,10 +43,11 @@ public class ServerThreadTests
     [Fact]
     public void HardStopCommandThreadWithAction()
     {
-        var st3 = IoC.Resolve<ServerThread>("CreateWithStartThread", "3");
-        var hardstop = IoC.Resolve<ICommand>("HardStop", "3");
+        var id3 = Guid.NewGuid().ToString();
+        var st3 = IoC.Resolve<ServerThread>("CreateWithStartThread", id3);
+        var hardstop = IoC.Resolve<ICommand>("HardStop", id3);
         Assert.NotNull(hardstop);
-        var senderTrue = IoC.Resolve<ISender>("SenderGetByID", "3");
+        var senderTrue = IoC.Resolve<ISender>("SenderGetByID", id3);
         var mre = new ManualResetEvent(false);
         IoC.Resolve<ICommand>("SendCommand", senderTrue, new ActionCommand(() => { mre.Set(); })).Execute();
         var sendCommand = IoC.Resolve<ICommand>("SendCommand", senderTrue, hardstop);
@@ -58,6 +60,8 @@ public class ServerThreadTests
     [Fact]
     public void HardStopThreadWithException()
     {
+        var id4 = Guid.NewGuid().ToString();
+        var id5 = Guid.NewGuid().ToString();
         var command1 = new Mock<ICommand>();
         var regStrategy1 = new Mock<IStrategy>();
         command1.Setup(_command => _command.Execute());
@@ -67,13 +71,13 @@ public class ServerThreadTests
             IoC.Resolve<Hwdtech.ICommand>("Scopes.Current.Set", IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Root"))).Execute();
             IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy1.Object.RunStrategy(args)).Execute();
         };
-        var th3 = IoC.Resolve<ServerThread>("CreateWithStartThread", "3", act1);
-        var th4 = IoC.Resolve<ServerThread>("CreateWithStartThread", "4", act1);
+        var th4 = IoC.Resolve<ServerThread>("CreateWithStartThread", id4, act1);
+        var th5 = IoC.Resolve<ServerThread>("CreateWithStartThread", id5, act1);
         var mre1 = new ManualResetEvent(false);
-        var hardStopCommand1 = IoC.Resolve<ICommand>("HardStop", "3", () => { mre1.Set(); });
-        var hardStopCommand2 = IoC.Resolve<ICommand>("HardStop", "4", () => { mre1.Set(); });
-        var senderFalse1 = IoC.Resolve<ISender>("SenderGetByID", "3");
-        var senderFalse2 = IoC.Resolve<ISender>("SenderGetByID", "4");
+        var hardStopCommand1 = IoC.Resolve<ICommand>("HardStop", id4, () => { mre1.Set(); });
+        var hardStopCommand2 = IoC.Resolve<ICommand>("HardStop", id5, () => { mre1.Set(); });
+        var senderFalse1 = IoC.Resolve<ISender>("SenderGetByID", id4);
+        var senderFalse2 = IoC.Resolve<ISender>("SenderGetByID", id5);
         var sendCommand1 = IoC.Resolve<ICommand>("SendCommand", senderFalse1, hardStopCommand2);
         var sendCommand2 = IoC.Resolve<ICommand>("SendCommand", senderFalse2, hardStopCommand2);
         var sendCommand3 = IoC.Resolve<ICommand>("SendCommand", senderFalse1, hardStopCommand1);
@@ -82,10 +86,10 @@ public class ServerThreadTests
         sendCommand2.Execute();
         sendCommand3.Execute();
         mre1.WaitOne();
-        th3.Wait();
         th4.Wait();
-        Assert.True(th3.Stopped());
+        th5.Wait();
         Assert.True(th4.Stopped());
+        Assert.True(th5.Stopped());
         command1.Verify();
     }
     [Fact]
@@ -105,10 +109,11 @@ public class ServerThreadTests
         mockCommand6.Setup(_command => _command.Execute()).Verifiable();
 
         var mre1 = new ManualResetEvent(false);
-        var th6 = IoC.Resolve<ServerThread>("CreateWithStartThread", "6");
+        var id6 = Guid.NewGuid().ToString();
+        var th6 = IoC.Resolve<ServerThread>("CreateWithStartThread", id6);
         Assert.True(th6.EmptyQueue());
-        var softStopCommand = IoC.Resolve<ICommand>("SoftStop", "6");
-        var sender = IoC.Resolve<ISender>("SenderGetByID", "6");
+        var softStopCommand = IoC.Resolve<ICommand>("SoftStop", id6);
+        var sender = IoC.Resolve<ISender>("SenderGetByID", id6);
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand1.Object).Execute();
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand2.Object).Execute();
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand3.Object).Execute();
@@ -133,6 +138,8 @@ public class ServerThreadTests
     [Fact]
     public void SoftStopCommandThreadWithException()
     {
+        var id8 = Guid.NewGuid().ToString();
+        var id9 = Guid.NewGuid().ToString();
         var command2 = new Mock<ICommand>();
         var regStrategy2 = new Mock<IStrategy>();
         command2.Setup(_command => _command.Execute());
@@ -143,13 +150,13 @@ public class ServerThreadTests
             IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy2.Object.RunStrategy(args)).Execute();
         };
 
-        var th8 = IoC.Resolve<ServerThread>("CreateWithStartThread", "8", act1);
-        var th9 = IoC.Resolve<ServerThread>("CreateWithStartThread", "9", act1);
+        var th8 = IoC.Resolve<ServerThread>("CreateWithStartThread", id8, act1);
+        var th9 = IoC.Resolve<ServerThread>("CreateWithStartThread", id9, act1);
         var mre1 = new ManualResetEvent(false);
-        var softStopCommand1 = IoC.Resolve<ICommand>("SoftStop", "8", () => { mre1.Set(); });
-        var softStopCommand2 = IoC.Resolve<ICommand>("SoftStop", "9", () => { mre1.Set(); });
-        var sender1 = IoC.Resolve<ISender>("SenderGetByID", "8");
-        var sender2 = IoC.Resolve<ISender>("SenderGetByID", "9");
+        var softStopCommand1 = IoC.Resolve<ICommand>("SoftStop", id8, () => { mre1.Set(); });
+        var softStopCommand2 = IoC.Resolve<ICommand>("SoftStop", id9, () => { mre1.Set(); });
+        var sender1 = IoC.Resolve<ISender>("SenderGetByID", id8);
+        var sender2 = IoC.Resolve<ISender>("SenderGetByID", id9);
         var sendCommand1 = IoC.Resolve<ICommand>("SendCommand", sender1, softStopCommand2);
         var sendCommand2 = IoC.Resolve<ICommand>("SendCommand", sender2, softStopCommand2);
         var sendCommand3 = IoC.Resolve<ICommand>("SendCommand", sender1, softStopCommand1);
@@ -180,9 +187,10 @@ public class ServerThreadTests
         mockCommand6.Setup(_command => _command.Execute()).Verifiable();
 
         var mre1 = new ManualResetEvent(false);
-        var th11 = IoC.Resolve<ServerThread>("CreateWithStartThread", "11");
-        var softStopCommand = IoC.Resolve<ICommand>("SoftStop", "11", () => { mre1.Set(); });
-        var sender = IoC.Resolve<ISender>("SenderGetByID", "11");
+        var id11 = Guid.NewGuid().ToString();
+        var th11 = IoC.Resolve<ServerThread>("CreateWithStartThread", id11);
+        var softStopCommand = IoC.Resolve<ICommand>("SoftStop", id11, () => { mre1.Set(); });
+        var sender = IoC.Resolve<ISender>("SenderGetByID", id11);
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand1.Object).Execute();
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand2.Object).Execute();
         IoC.Resolve<ICommand>("SendCommand", sender, mockCommand3.Object).Execute();
@@ -208,7 +216,8 @@ public class ServerThreadTests
     {
         var queue = new BlockingCollection<ICommand>(100);
         var rec = new Reciever(queue);
-        var th15 = new ServerThread(rec, "15");
+        var id15 = Guid.NewGuid().ToString();
+        var th15 = new ServerThread(rec, id15);
         var check1 = th15.Equals(null);
         Assert.False(check1);
     }
@@ -217,10 +226,12 @@ public class ServerThreadTests
     {
         var queue1 = new BlockingCollection<ICommand>(100);
         var rec1 = new Reciever(queue1);
-        var th20 = new ServerThread(rec1, "20");
+        var id20 = Guid.NewGuid().ToString();
+        var th20 = new ServerThread(rec1, id20);
         var queue2 = new BlockingCollection<ICommand>(100);
         var rec2 = new Reciever(queue2);
-        var th21 = new ServerThread(rec2, "21");
+        var id21 = Guid.NewGuid().ToString();
+        var th21 = new ServerThread(rec2, id21);
         var check2 = th20.Equals(th21);
         Assert.False(check2);
     }
@@ -229,7 +240,8 @@ public class ServerThreadTests
     {
         var queue = new BlockingCollection<ICommand>(100);
         var rec = new Reciever(queue);
-        var th25 = new ServerThread(rec, "25");
+        var id25 = Guid.NewGuid().ToString();
+        var th25 = new ServerThread(rec, id25);
         var check3 = th25.Equals(28);
         Assert.False(check3);
     }
