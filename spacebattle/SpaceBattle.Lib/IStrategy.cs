@@ -2,5 +2,5 @@
 
 public interface IStrategy
 {
-    public object RunStrategy(params object[] args);
+    public object Invoke(params object[] args);
 }

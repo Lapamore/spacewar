@@ -5,7 +5,7 @@ namespace SpaceBattle.Lib
 {
     public class StartThread : IStrategy
     {
-        public object RunStrategy(params object[] args)
+        public object Invoke(params object[] args)
         {
             var senderDict = IoC.Resolve<ConcurrentDictionary<string, ISender>>("SenderDictionary");
             var threadDict = IoC.Resolve<ConcurrentDictionary<string, ServerThread>>("ThreadDictionary");

@@ -4,7 +4,7 @@ namespace SpaceBattle.Lib;
 
 public class HardStop : IStrategy
 {
-    public object RunStrategy(params object[] args)
+    public object Invoke(params object[] args)
     {
         var id = args[0];
         var st = IoC.Resolve<ServerThread>("ServerThreadID", id);

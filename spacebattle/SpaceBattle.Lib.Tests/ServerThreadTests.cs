@@ -17,13 +17,13 @@ public class ServerThreadTests
         IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ServerThreadID", (object[] id) => threadDict[(string)id[0]]).Execute();
 
         var startthread = new StartThread();
-        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CreateWithStartThread", (object[] args) => startthread.RunStrategy(args)).Execute();
+        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CreateWithStartThread", (object[] args) => startthread.Invoke(args)).Execute();
         var hardstop = new HardStop();
-        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "HardStop", (object[] args) => hardstop.RunStrategy(args)).Execute();
+        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "HardStop", (object[] args) => hardstop.Invoke(args)).Execute();
         var softstop = new SoftStop();
-        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SoftStop", (object[] args) => softstop.RunStrategy(args)).Execute();
+        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SoftStop", (object[] args) => softstop.Invoke(args)).Execute();
         var sendcommand = new SendCommand();
-        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SendCommand", (object[] args) => sendcommand.RunStrategy(args)).Execute();
+        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SendCommand", (object[] args) => sendcommand.Invoke(args)).Execute();
     }
     [Fact]
     public void HardStopThreadTest()
@@ -65,11 +65,11 @@ public class ServerThreadTests
         var command1 = new Mock<ICommand>();
         var regStrategy1 = new Mock<IStrategy>();
         command1.Setup(_command => _command.Execute());
-        regStrategy1.Setup(_strategy => _strategy.RunStrategy(It.IsAny<object[]>())).Returns(command1.Object);
+        regStrategy1.Setup(_strategy => _strategy.Invoke(It.IsAny<object[]>())).Returns(command1.Object);
         Action act1 = () =>
         {
             IoC.Resolve<Hwdtech.ICommand>("Scopes.Current.Set", IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Root"))).Execute();
-            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy1.Object.RunStrategy(args)).Execute();
+            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy1.Object.Invoke(args)).Execute();
         };
         var th4 = IoC.Resolve<ServerThread>("CreateWithStartThread", id4, act1);
         var th5 = IoC.Resolve<ServerThread>("CreateWithStartThread", id5, act1);
@@ -143,11 +143,11 @@ public class ServerThreadTests
         var command2 = new Mock<ICommand>();
         var regStrategy2 = new Mock<IStrategy>();
         command2.Setup(_command => _command.Execute());
-        regStrategy2.Setup(_strategy => _strategy.RunStrategy(It.IsAny<object[]>())).Returns(command2.Object);
+        regStrategy2.Setup(_strategy => _strategy.Invoke(It.IsAny<object[]>())).Returns(command2.Object);
         Action act1 = () =>
         {
             IoC.Resolve<Hwdtech.ICommand>("Scopes.Current.Set", IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Root"))).Execute();
-            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy2.Object.RunStrategy(args)).Execute();
+            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "ExceptionHandler", (object[] args) => regStrategy2.Object.Invoke(args)).Execute();
         };
 
         var th8 = IoC.Resolve<ServerThread>("CreateWithStartThread", id8, act1);
