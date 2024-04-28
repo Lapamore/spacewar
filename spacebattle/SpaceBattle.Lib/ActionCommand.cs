@@ -2,12 +2,13 @@
 
 public class ActionCommand : ICommand
 {
-    private readonly Action _action;
-
-    public ActionCommand(Action action) => _action = action;
-
+    private readonly Action action;
+    public ActionCommand(Action _action)
+    {
+        action = _action;
+    }
     public void Execute()
     {
-        _action();
+        action();
     }
 }

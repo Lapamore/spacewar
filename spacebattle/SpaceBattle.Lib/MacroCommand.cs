@@ -2,15 +2,17 @@
 
 public class MacroCommand : ICommand
 {
-    private readonly IEnumerable<ICommand> _containedCommands;
-
-    public MacroCommand(IEnumerable<ICommand> commands)
+    private readonly IEnumerable<ICommand> command;
+    public MacroCommand(IEnumerable<ICommand> _command)
     {
-        _containedCommands = commands;
+        command = _command;
     }
-
     public void Execute()
     {
-        _containedCommands.ToList().ForEach(command => command.Execute());
+        var icmd = command.GetEnumerator();
+        while (icmd.MoveNext())
+        {
+            icmd.Current.Execute();
+        }
     }
 }
