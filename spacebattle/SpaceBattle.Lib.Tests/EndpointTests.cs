@@ -8,7 +8,6 @@ namespace SpaceBattle.Lib
 {
     public class EndpointTest
     {
-        private Exception _exception = new Exception();
         private readonly Hashtable _idgame = new Hashtable();
         public EndpointTest()
         {
@@ -45,9 +44,9 @@ namespace SpaceBattle.Lib
             var handle = new HttpClientHandler();
             var serv = new HttpClient(handle);
             serv.BaseAddress = new Uri("http://localhost:12233");
-            var prms = new Hashtable();
-            prms.Add("game item id", 123);
-            prms.Add("initial velocity", 4);
+            var prms = new Dictionary<string, object>();
+            prms.Add("adsfg", false);
+            prms.Add("rotation speed", 4);
             var mess = new Mess("Error", 112, prms);
             var request = System.Net.HttpStatusCode.BadRequest;
             var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
@@ -77,10 +76,10 @@ namespace SpaceBattle.Lib
             var handle = new HttpClientHandler();
             var server = new HttpClient(handle);
             server.BaseAddress = new Uri("http://localhost:12233");
-            var parameters = new Hashtable();
-            parameters.Add("game item id", 123);
-            parameters.Add("initial velocity", 4);
-            var mess = new Mess("StartServer", 111, parameters);
+            var prms = new Dictionary<string, object>();
+            prms.Add("asdfg", false);
+            prms.Add("rotation speed", 4);
+            var mess = new Mess("StartServer", 111, prms);
             var request = System.Net.HttpStatusCode.OK;
             var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
             Endpoint.Run(ns);

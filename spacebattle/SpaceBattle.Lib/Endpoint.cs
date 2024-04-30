@@ -23,7 +23,7 @@ namespace SpaceBattle.Lib
                     var cmd = IoC.Resolve<ICommand>("CheckCommandWork");
                     var sender = IoC.Resolve<ISender>("SenderGetByID", stid.ToString());
                     IoC.Resolve<ICommand>("SendCommand", sender, cmd).Execute();
-                    return Results.Ok(_mess);
+                    return Results.Ok();
                 }
                 catch
                 {
@@ -40,5 +40,4 @@ namespace SpaceBattle.Lib
             }
         }
     }
-    public record Mess(string cmd, int id, Hashtable prms);
 }
