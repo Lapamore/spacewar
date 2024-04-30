@@ -64,37 +64,37 @@ namespace SpaceBattle.Lib
             th.Wait();
             cmd.Verify(x => x.Execute(), Times.Never());
         }
-        // [Fact]
-        // public void CorrectWorkTest()
-        // {
-        //     var cmd = new Mock<ICommand>();
-        //     cmd.Setup(x => x.Execute()).Verifiable();
-        //     IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return cmd.Object; }).Execute();
-        //     var id = Guid.NewGuid();
-        //     _idgame.Add(111, id);
-        //     var mre = new ManualResetEvent(false);
-        //     var th = IoC.Resolve<ServerThread>("CreateWithStartThread", id.ToString());
-        //     var handle = new HttpClientHandler();
-        //     var server = new HttpClient(handle);
-        //     server.BaseAddress = new Uri("http://localhost:12233");
-        //     var parameters = new Hashtable();
-        //     parameters.Add("game item id", 123);
-        //     parameters.Add("initial velocity", 4);
-        //     var mess = new Mess("StartServer", 111, parameters);
-        //     var request = System.Net.HttpStatusCode.OK;
-        //     var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
-        //     Endpoint.Run(ns);
-        //     var rec = JsonContent.Create(mess);
-        //     var ans = server.PostAsync("/message", rec);
-        //     Assert.Equal(request, ans.Result.StatusCode);
-        //     Endpoint.Stop();
-        //     var hardstop = IoC.Resolve<ICommand>("HardStop", id.ToString(), () => { mre.Set(); });
-        //     var sender = IoC.Resolve<ISender>("SenderGetByID", id.ToString());
-        //     var send = IoC.Resolve<ICommand>("SendCommand", sender, hardstop);
-        //     send.Execute();
-        //     mre.WaitOne();
-        //     th.Wait();
-        //     cmd.Verify(x => x.Execute(), Times.Once());
-        // }
+        [Fact]
+        public void CorrectWorkTest()
+        {
+            var cmd = new Mock<ICommand>();
+            cmd.Setup(x => x.Execute()).Verifiable();
+            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return cmd.Object; }).Execute();
+            var id = Guid.NewGuid();
+            _idgame.Add(111, id);
+            var mre = new ManualResetEvent(false);
+            var th = IoC.Resolve<ServerThread>("CreateWithStartThread", id.ToString());
+            var handle = new HttpClientHandler();
+            var server = new HttpClient(handle);
+            server.BaseAddress = new Uri("http://localhost:12233");
+            var parameters = new Hashtable();
+            parameters.Add("game item id", 123);
+            parameters.Add("initial velocity", 4);
+            var mess = new Mess("StartServer", 111, parameters);
+            var request = System.Net.HttpStatusCode.OK;
+            var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
+            Endpoint.Run(ns);
+            var rec = JsonContent.Create(mess);
+            var ans = server.PostAsync("/message", rec);
+            Assert.Equal(request, ans.Result.StatusCode);
+            Endpoint.Stop();
+            var hardstop = IoC.Resolve<ICommand>("HardStop", id.ToString(), () => { mre.Set(); });
+            var sender = IoC.Resolve<ISender>("SenderGetByID", id.ToString());
+            var send = IoC.Resolve<ICommand>("SendCommand", sender, hardstop);
+            send.Execute();
+            mre.WaitOne();
+            th.Wait();
+            cmd.Verify(x => x.Execute(), Times.Once());
+        }
     }
 }
