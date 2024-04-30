@@ -21,7 +21,7 @@ namespace SpaceBattle.Lib
                     var id = _mess.id;
                     var stid = IoC.Resolve<Guid>("GetServerThreadIdByGameId", id);
                     var cmd = IoC.Resolve<ICommand>("CheckCommandWork");
-                    var sender = IoC.Resolve<ICommand>("SenderGetByID", stid.ToString());
+                    var sender = IoC.Resolve<ISender>("SenderGetByID", stid.ToString());
                     IoC.Resolve<ICommand>("SendCommand", sender, cmd).Execute();
                     return Results.Ok(_mess);
                 }
