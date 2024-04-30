@@ -26,29 +26,26 @@ namespace SpaceBattle.Lib
             IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CreateWithStartThread", (object[] args) => startthread.Invoke(args)).Execute();
             var hardstop = new HardStop();
             IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "HardStop", (object[] args) => hardstop.Invoke(args)).Execute();
-            var softstop = new SoftStop();
-            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SoftStop", (object[] args) => softstop.Invoke(args)).Execute();
             var sendcommand = new SendCommand();
             IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "SendCommand", (object[] args) => sendcommand.Invoke(args)).Execute();
         }
         [Fact]
         public void IncorrectWorkTest()
         {
-            var cmd = new Mock<ICommand>();
-            cmd.Setup(x => x.Execute()).Verifiable();
-            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return cmd.Object; }).Execute();
             var id = Guid.NewGuid();
             _idgame.Add(111, id);
             var mre = new ManualResetEvent(false);
             var th = IoC.Resolve<ServerThread>("CreateWithStartThread", id.ToString());
-            var handle = new HttpClientHandler();
-            var serv = new HttpClient(handle);
+            var serv = new HttpClient(new HttpClientHandler());
             serv.BaseAddress = new Uri("http://localhost:12233");
             var prms = new Dictionary<string, object>();
-            prms.Add("adsfg", false);
+            prms.Add("can rotate", true);
             prms.Add("rotation speed", 4);
-            var mess = new Mess("Error", 112, prms);
+            var mess = new Mess("WRONG!", 112, prms);
             var request = System.Net.HttpStatusCode.BadRequest;
+            var command = new Mock<ICommand>();
+            command.Setup(x => x.Execute()).Verifiable();
+            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return command.Object; }).Execute();
             var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
             Endpoint.Run(ns);
             var rec = JsonContent.Create(mess);
@@ -61,26 +58,25 @@ namespace SpaceBattle.Lib
             send.Execute();
             mre.WaitOne();
             th.Wait();
-            cmd.Verify(x => x.Execute(), Times.Never());
+            command.Verify(x => x.Execute(), Times.Never());
         }
         [Fact]
         public void CorrectWorkTest()
         {
-            var cmd = new Mock<ICommand>();
-            cmd.Setup(x => x.Execute()).Verifiable();
-            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return cmd.Object; }).Execute();
             var id = Guid.NewGuid();
             _idgame.Add(111, id);
             var mre = new ManualResetEvent(false);
             var th = IoC.Resolve<ServerThread>("CreateWithStartThread", id.ToString());
-            var handle = new HttpClientHandler();
-            var server = new HttpClient(handle);
+            var server = new HttpClient(new HttpClientHandler());
             server.BaseAddress = new Uri("http://localhost:12233");
             var prms = new Dictionary<string, object>();
-            prms.Add("asdfg", false);
+            prms.Add("can rotate", true);
             prms.Add("rotation speed", 4);
             var mess = new Mess("StartServer", 111, prms);
             var request = System.Net.HttpStatusCode.OK;
+            var command = new Mock<ICommand>();
+            command.Setup(x => x.Execute()).Verifiable();
+            IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "CheckCommandWork", (object[] args) => { return command.Object; }).Execute();
             var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
             Endpoint.Run(ns);
             var rec = JsonContent.Create(mess);
@@ -93,7 +89,7 @@ namespace SpaceBattle.Lib
             send.Execute();
             mre.WaitOne();
             th.Wait();
-            cmd.Verify(x => x.Execute(), Times.Once());
+            command.Verify(x => x.Execute(), Times.Once());
         }
     }
 }

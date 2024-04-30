@@ -12,7 +12,6 @@ namespace SpaceBattle.Lib
         {
             var webappbuild = WebApplication.CreateBuilder();
             _app = webappbuild.Build();
-            _app.UseHttpsRedirection();
             _app.Map("/message", (Mess _mess) =>
             {
                 try
