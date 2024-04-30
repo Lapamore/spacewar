@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CoreWCF.Http" Version="1.5.2" />
+    <PackageReference Include="CoreWCF.Primitives" Version="1.5.2" />
+    <PackageReference Include="CoreWCF.WebHttp" Version="1.5.2" />
     <PackageReference Include="Hwdtech.IoC" Version="1.0.0" />
     <PackageReference Include="Hwdtech.Ioc.ScopeBasedIoCImplementation" Version="1.0.0" />
     <PackageReference Include="Hwdtech.Ioc.SingleThreadScope" Version="1.0.0" />
