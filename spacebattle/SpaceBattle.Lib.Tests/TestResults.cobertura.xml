@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.9878" branch-rate="1" version="1.9" timestamp="1714463272" lines-covered="325" lines-valid="329" branches-covered="32" branches-valid="32">
+<coverage line-rate="1" branch-rate="1" version="1.9" timestamp="1714471790" lines-covered="327" lines-valid="327" branches-covered="32" branches-valid="32">
   <sources>
     <source>C:\Users\бумбурурик)\Desktop\ooaip\spacewar\spacebattle\SpaceBattle.Lib\</source>
   </sources>
   <packages>
-    <package name="SpaceBattle.Lib" line-rate="0.9878" branch-rate="1" complexity="76">
+    <package name="SpaceBattle.Lib" line-rate="1" branch-rate="1" complexity="76">
       <classes>
         <class name="SpaceBattle.Lib.ActionCommand" filename="ActionCommand.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
@@ -102,9 +102,9 @@
             <line number="12" hits="19" branch="False" />
           </lines>
         </class>
-        <class name="SpaceBattle.Lib.Endpoint" filename="Endpoint.cs" line-rate="0.862" branch-rate="1" complexity="3">
+        <class name="SpaceBattle.Lib.Endpoint" filename="Endpoint.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
-            <method name="Run" signature="(System.Object)" line-rate="0.826" branch-rate="1" complexity="1">
+            <method name="Run" signature="(System.Object)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="12" hits="2" branch="False" />
                 <line number="13" hits="2" branch="False" />
@@ -117,32 +117,30 @@
                 <line number="20" hits="2" branch="False" />
                 <line number="21" hits="2" branch="False" />
                 <line number="22" hits="2" branch="False" />
-                <line number="23" hits="0" branch="False" />
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="2" branch="False" />
-                <line number="28" hits="2" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="2" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
                 <line number="29" hits="2" branch="False" />
-                <line number="30" hits="2" branch="False" />
+                <line number="30" hits="4" branch="False" />
                 <line number="31" hits="2" branch="False" />
-                <line number="32" hits="4" branch="False" />
-                <line number="33" hits="2" branch="False" />
-                <line number="34" hits="2" branch="False" />
+                <line number="32" hits="2" branch="False" />
               </lines>
             </method>
             <method name="Stop" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="36" hits="2" branch="False" />
-                <line number="37" hits="2" branch="True" condition-coverage="100% (2/2)">
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="11" type="jump" coverage="100%" />
                   </conditions>
                 </line>
+                <line number="36" hits="2" branch="False" />
+                <line number="37" hits="2" branch="False" />
                 <line number="38" hits="2" branch="False" />
                 <line number="39" hits="2" branch="False" />
-                <line number="40" hits="2" branch="False" />
-                <line number="41" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
@@ -158,40 +156,38 @@
             <line number="20" hits="2" branch="False" />
             <line number="21" hits="2" branch="False" />
             <line number="22" hits="2" branch="False" />
-            <line number="23" hits="0" branch="False" />
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="2" branch="False" />
-            <line number="28" hits="2" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="2" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
             <line number="29" hits="2" branch="False" />
-            <line number="30" hits="2" branch="False" />
+            <line number="30" hits="4" branch="False" />
             <line number="31" hits="2" branch="False" />
-            <line number="32" hits="4" branch="False" />
-            <line number="33" hits="2" branch="False" />
+            <line number="32" hits="2" branch="False" />
             <line number="34" hits="2" branch="False" />
-            <line number="36" hits="2" branch="False" />
-            <line number="37" hits="2" branch="True" condition-coverage="100% (2/2)">
+            <line number="35" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="11" type="jump" coverage="100%" />
               </conditions>
             </line>
+            <line number="36" hits="2" branch="False" />
+            <line number="37" hits="2" branch="False" />
             <line number="38" hits="2" branch="False" />
             <line number="39" hits="2" branch="False" />
-            <line number="40" hits="2" branch="False" />
-            <line number="41" hits="2" branch="False" />
           </lines>
         </class>
         <class name="SpaceBattle.Lib.Mess" filename="Endpoint.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="get_cmd" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="43" hits="24" branch="False" />
+                <line number="41" hits="27" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="43" hits="24" branch="False" />
+            <line number="41" hits="27" branch="False" />
           </lines>
         </class>
         <class name="SpaceBattle.Lib.ErrorLoggingStrategy" filename="ErrorLoggingStrategy.cs" line-rate="1" branch-rate="1" complexity="1">
