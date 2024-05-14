@@ -25,7 +25,7 @@ namespace SpaceBattle.Lib
             {
                 var cmd = _rec.Recieve();
 
-                try 
+                try
                 {
                     cmd.Execute();
                 }
@@ -36,7 +36,7 @@ namespace SpaceBattle.Lib
                 }
             }
 
-            stopwatch.Stop();  
+            stopwatch.Stop();
         }
     }
 }
