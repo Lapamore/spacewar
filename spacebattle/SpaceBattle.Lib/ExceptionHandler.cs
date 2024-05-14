@@ -1,13 +1,17 @@
 namespace SpaceBattle.Lib
 {
-    public class ExceptionHandler : IStrategy
+    public class DefaultHandler : IHandler
     {
-        public object Invoke(params object[] args)
-        {
-            ICommand cmd = (ICommand)args[0];
-            Exception exc = (Exception)args[1];
+        private readonly Exception _exception;
 
-            throw exc;
+        public DefaultHandler(Exception exception)
+        {
+            _exception = exception;
+        }
+
+        public void Handle()
+        {
+            throw _exception;
         }
     }
 }

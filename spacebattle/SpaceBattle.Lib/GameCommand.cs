@@ -5,38 +5,35 @@ namespace SpaceBattle.Lib
 {
     public class GameCommand : ICommand
     {
-        object _scope;
-        IReciever _rec;
-        Stopwatch stopwatch = new Stopwatch();
-        public GameCommand(object scope, IReciever rec)
+        //private readonly int _gameId;
+        private readonly object _scope;
+        private readonly Queue<ICommand> _queue;
+        public GameCommand(object scope, Queue<ICommand> queue)
         {
+            //_gameId = gameId;
             _scope = scope;
-            _rec = rec;
+            _queue = queue;
         }
-
         public void Execute()
         {
             IoC.Resolve<Hwdtech.ICommand>("Scopes.Current.Set", _scope).Execute();
-            var gametime = IoC.Resolve<int>("GameQuantum");
-            stopwatch.Reset();
-            stopwatch.Start();
-
-            while (stopwatch.ElapsedMilliseconds <= gametime && !_rec.IsEmpty())
+            var timeout = IoC.Resolve<TimeSpan>("GameQuantum");
+            var time = new Stopwatch();
+            time.Start();
+            while (_queue.Count != 0 && time.Elapsed < timeout)
             {
-                var cmd = _rec.Recieve();
-
+                var cmd = _queue.Dequeue();
                 try
                 {
                     cmd.Execute();
                 }
-
                 catch (Exception ex)
                 {
-                    IoC.Resolve<ICommand>("ExceptionHandlerGame", cmd, ex).Execute();
+                    IoC.Resolve<IHandler>("ExceptionHandlerGame", cmd, ex).Handle();
                 }
             }
 
-            stopwatch.Stop();
+            time.Stop();
         }
     }
 }
