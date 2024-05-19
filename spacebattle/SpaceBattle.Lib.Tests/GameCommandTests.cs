@@ -37,9 +37,9 @@ public class GameCommandTest
             var timer = new TimeSpan(0, 0, 5);
             return (object)timer;
         }).Execute();
-        queue.Enqueue(new ActionCommand(() => 
-        { 
-            throw new Exception(); 
+        queue.Enqueue(new ActionCommand(() =>
+        {
+            throw new Exception();
         }));
         var cmd = new GameCommand(ns, queue);
         cmd.Execute();
@@ -48,7 +48,7 @@ public class GameCommandTest
     [Fact]
     public void UnsuccessExceptionHandler()
     {
-        var handler = IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "GameExceptionHandler", (object[] args) => new ExceptionHandler((Exception)args[1])); 
+        var handler = IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "GameExceptionHandler", (object[] args) => new ExceptionHandler((Exception)args[1]));
         var ns = IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Current"));
         var queue = new Queue<ICommand>();
         IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "GameQuantum", (object[] args) =>
