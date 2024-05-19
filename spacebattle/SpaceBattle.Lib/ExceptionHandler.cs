@@ -1,14 +1,12 @@
 namespace SpaceBattle.Lib
 {
-    public class DefaultHandler : IHandler
+    public class ExceptionHandler : IHandler
     {
         private readonly Exception _exception;
-
-        public DefaultHandler(Exception exception)
+        public ExceptionHandler(Exception exception)
         {
             _exception = exception;
         }
-
         public void Handle()
         {
             throw _exception;
