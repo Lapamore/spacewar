@@ -25,9 +25,9 @@ namespace SpaceBattle.Lib
                 {
                     cmd.Execute();
                 }
-                catch (Exception exc)
+                catch (Exception exception)
                 {
-                    IoC.Resolve<IHandler>("GameExceptionHandler", cmd, exc).Handle();
+                    IoC.Resolve<IHandler>("GameExceptionHandler", cmd, exception).Handle();
                 }
             }
             time.Stop();
