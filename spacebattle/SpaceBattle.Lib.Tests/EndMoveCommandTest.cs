@@ -1,4 +1,7 @@
-﻿namespace SpaceBattle.Lib.Tests;
+﻿using Hwdtech;
+using Hwdtech.Ioc;
+
+namespace SpaceBattle.Lib.Tests;
 
 public class EndMoveCommandExecutionTest
 {
