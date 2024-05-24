@@ -41,7 +41,3 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
-spacebattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj
-spacebattle/SpaceBattle.Lib.Tests/SpaceBattle.Lib.Tests.csproj
-spacebattle/SpaceBattle.Lib.Tests/TestResults.cobertura.xml
-spacebattle/SpaceBattle.Lib.Tests/SpaceBattle.Lib.Tests.csproj
