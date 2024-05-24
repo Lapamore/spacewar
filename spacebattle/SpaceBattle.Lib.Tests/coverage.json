@@ -1,27 +1,46 @@
 {
   "SpaceBattle.Lib.dll": {
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\ActionCommand.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ActionCommand.cs": {
       "SpaceBattle.Lib.ActionCommand": {
         "System.Void SpaceBattle.Lib.ActionCommand::Execute()": {
           "Lines": {
-            "11": 10,
-            "12": 10,
-            "13": 10
+            "11": 19,
+            "12": 19,
+            "13": 19
           },
           "Branches": []
         },
         "System.Void SpaceBattle.Lib.ActionCommand::.ctor(System.Action)": {
           "Lines": {
-            "6": 10,
-            "7": 10,
-            "8": 10,
-            "9": 10
+            "6": 19,
+            "7": 19,
+            "8": 19,
+            "9": 19
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\Angle.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ActionDispatcher.cs": {
+      "SpaceBattle.Lib.ActionDispatcher": {
+        "System.Void SpaceBattle.Lib.ActionDispatcher::Execute()": {
+          "Lines": {
+            "12": 4,
+            "13": 4,
+            "15": 3,
+            "16": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.ActionDispatcher::.ctor(SpaceBattle.Lib.IGameCommandMessage)": {
+          "Lines": {
+            "9": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Angle.cs": {
       "SpaceBattle.Lib.Angle": {
         "System.Int32 SpaceBattle.Lib.Angle::get_X()": {
           "Lines": {
@@ -84,25 +103,180 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\HardStop.cs": {
-      "SpaceBattle.Lib.HardStop": {
-        "System.Object SpaceBattle.Lib.HardStop::RunStrategy(System.Object[])": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\BridgeCommand.cs": {
+      "SpaceBattle.Lib.BridgeCommand": {
+        "System.Void SpaceBattle.Lib.BridgeCommand::Inject(SpaceBattle.Lib.ICommand)": {
           "Lines": {
-            "8": 4,
-            "9": 4,
-            "10": 4,
-            "11": 4,
-            "12": 4,
-            "13": 3,
-            "14": 3,
-            "15": 3,
-            "16": 3,
-            "17": 3,
-            "18": 3,
-            "19": 3,
+            "13": 2,
+            "14": 2,
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.BridgeCommand::Execute()": {
+          "Lines": {
+            "18": 4,
+            "19": 4,
+            "20": 4
+          },
+          "Branches": []
+        },
+        "SpaceBattle.Lib.ICommand SpaceBattle.Lib.BridgeCommand::GetCommand()": {
+          "Lines": {
             "22": 1,
             "23": 1,
-            "25": 4
+            "24": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.BridgeCommand::.ctor(SpaceBattle.Lib.ICommand)": {
+          "Lines": {
+            "7": 3,
+            "8": 3,
+            "9": 3,
+            "10": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\EmptyCommand.cs": {
+      "SpaceBattle.Lib.EmptyCommand": {
+        "System.Void SpaceBattle.Lib.EmptyCommand::Execute()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\EndMoveCommand.cs": {
+      "SpaceBattle.Lib.EndMoveCommand": {
+        "System.Void SpaceBattle.Lib.EndMoveCommand::Execute()": {
+          "Lines": {
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.EndMoveCommand::.ctor(SpaceBattle.Lib.IMoveCommandEndable)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Endpoint.cs": {
+      "SpaceBattle.Lib.Endpoint": {
+        "System.Void SpaceBattle.Lib.Endpoint::Run(System.Object)": {
+          "Lines": {
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 2,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 2,
+            "31": 4,
+            "32": 2,
+            "33": 2
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.Endpoint::Stop()": {
+          "Lines": {
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 11,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ErrorLoggingStrategy.cs": {
+      "SpaceBattle.Lib.ErrorLoggingStrategy": {
+        "System.Object SpaceBattle.Lib.ErrorLoggingStrategy::Invoke(System.Object[])": {
+          "Lines": {
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\GameQueuePopStrategy.cs": {
+      "SpaceBattle.Lib.GameQueuePopStrategy": {
+        "System.Object SpaceBattle.Lib.GameQueuePopStrategy::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 1,
+            "9": 1,
+            "11": 1,
+            "13": 4,
+            "14": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\HardStop.cs": {
+      "SpaceBattle.Lib.HardStop": {
+        "System.Object SpaceBattle.Lib.HardStop::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 6,
+            "9": 6,
+            "10": 6,
+            "11": 6,
+            "12": 6,
+            "13": 5,
+            "14": 5,
+            "15": 5,
+            "16": 5,
+            "17": 5,
+            "18": 5,
+            "19": 5,
+            "22": 1,
+            "23": 1,
+            "25": 6
           },
           "Branches": [
             {
@@ -111,7 +285,7 @@
               "EndOffset": 43,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 3
+              "Hits": 5
             },
             {
               "Line": 12,
@@ -125,7 +299,7 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\IMovable.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\IMovable.cs": {
       "SpaceBattle.Lib.MoveCommand": {
         "System.Void SpaceBattle.Lib.MoveCommand::Execute()": {
           "Lines": {
@@ -146,29 +320,54 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\ISendCommand.cs": {
-      "SpaceBattle.Lib.ISendCommand": {
-        "System.Void SpaceBattle.Lib.ISendCommand::Execute()": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\InitializeGameStrategy.cs": {
+      "SpaceBattle.Lib.InitializeGameStrategy": {
+        "System.Object SpaceBattle.Lib.InitializeGameStrategy::Invoke(System.Object[])": {
           "Lines": {
-            "13": 25,
-            "14": 25,
-            "15": 25
-          },
-          "Branches": []
-        },
-        "System.Void SpaceBattle.Lib.ISendCommand::.ctor(SpaceBattle.Lib.ISender,SpaceBattle.Lib.ICommand)": {
-          "Lines": {
-            "7": 25,
-            "8": 25,
-            "9": 25,
-            "10": 25,
-            "11": 25
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\ITurn.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ISendCommand.cs": {
+      "SpaceBattle.Lib.ISendCommand": {
+        "System.Void SpaceBattle.Lib.ISendCommand::Execute()": {
+          "Lines": {
+            "13": 28,
+            "14": 28,
+            "15": 28
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.ISendCommand::.ctor(SpaceBattle.Lib.ISender,SpaceBattle.Lib.ICommand)": {
+          "Lines": {
+            "7": 28,
+            "8": 28,
+            "9": 28,
+            "10": 28,
+            "11": 28
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ITurn.cs": {
       "SpaceBattle.Lib.TurnCommand": {
         "System.Void SpaceBattle.Lib.TurnCommand::Execute()": {
           "Lines": {
@@ -189,17 +388,44 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\MacroCommand.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\LogHandler.cs": {
+      "SpaceBattle.Lib.LogHandler": {
+        "System.Void SpaceBattle.Lib.LogHandler::Handle()": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.LogHandler::.ctor(SpaceBattle.Lib.ICommand,System.Exception)": {
+          "Lines": {
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\MacroCommand.cs": {
       "SpaceBattle.Lib.MacroCommand": {
         "System.Void SpaceBattle.Lib.MacroCommand::Execute()": {
           "Lines": {
-            "11": 4,
-            "12": 4,
-            "13": 10,
-            "14": 7,
-            "15": 7,
-            "16": 6,
-            "17": 3
+            "11": 14,
+            "12": 14,
+            "13": 40,
+            "14": 27,
+            "15": 27,
+            "16": 26,
+            "17": 13
           },
           "Branches": [
             {
@@ -208,7 +434,7 @@
               "EndOffset": 15,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 7
+              "Hits": 27
             },
             {
               "Line": 13,
@@ -216,28 +442,155 @@
               "EndOffset": 39,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 3
+              "Hits": 13
             }
           ]
         },
         "System.Void SpaceBattle.Lib.MacroCommand::.ctor(System.Collections.Generic.IEnumerable`1<SpaceBattle.Lib.ICommand>)": {
           "Lines": {
-            "6": 3,
-            "7": 3,
-            "8": 3,
-            "9": 3
+            "6": 11,
+            "7": 11,
+            "8": 11,
+            "9": 11
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\Reciever.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Message.cs": {
+      "SpaceBattle.Lib.Mess": {
+        "System.String SpaceBattle.Lib.Mess::get_cmd()": {
+          "Lines": {
+            "3": 24
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\MessageToCommandConverter.cs": {
+      "SpaceBattle.Lib.MessageToCommandConverter": {
+        "System.Object SpaceBattle.Lib.MessageToCommandConverter::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 4,
+            "9": 4,
+            "11": 4,
+            "13": 6,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\NewGameScopeStrategy.cs": {
+      "SpaceBattle.Lib.NewGameScopeStrategy": {
+        "System.Object SpaceBattle.Lib.NewGameScopeStrategy::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "13": 1,
+            "15": 1,
+            "16": 1,
+            "18": 1,
+            "19": 2,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ProgramStart.cs": {
+      "SpaceBattle.Lib.ProgramStart": {
+        "System.Void SpaceBattle.Lib.ProgramStart::Execute()": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.ProgramStart::.ctor(System.Int32)": {
+          "Lines": {
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\QueueProvider.cs": {
+      "SpaceBattle.Lib.QueueProvider": {
+        "System.Object SpaceBattle.Lib.QueueProvider::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 3,
+            "9": 3,
+            "13": 3,
+            "14": 2,
+            "15": 2,
+            "18": 1,
+            "19": 2
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 35,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\QueuePusher.cs": {
+      "SpaceBattle.Lib.QueuePusher": {
+        "System.Object SpaceBattle.Lib.QueuePusher::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 2,
+            "9": 2,
+            "11": 2,
+            "13": 2,
+            "15": 4,
+            "16": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Reciever.cs": {
       "SpaceBattle.Lib.Reciever": {
         "SpaceBattle.Lib.ICommand SpaceBattle.Lib.Reciever::Recieve()": {
           "Lines": {
-            "12": 29,
-            "13": 29,
-            "14": 29
+            "12": 32,
+            "13": 32,
+            "14": 32
           },
           "Branches": []
         },
@@ -251,88 +604,171 @@
         },
         "System.Void SpaceBattle.Lib.Reciever::.ctor(System.Collections.Concurrent.BlockingCollection`1<SpaceBattle.Lib.ICommand>)": {
           "Lines": {
-            "7": 12,
-            "8": 12,
-            "9": 12,
-            "10": 12
+            "7": 14,
+            "8": 14,
+            "9": 14,
+            "10": 14
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\SendCommand.cs": {
-      "SpaceBattle.Lib.SendCommand": {
-        "System.Object SpaceBattle.Lib.SendCommand::RunStrategy(System.Object[])": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\RemoveGameCommand.cs": {
+      "SpaceBattle.Lib.RemoveGameCommand": {
+        "System.Void SpaceBattle.Lib.RemoveGameCommand::Execute()": {
           "Lines": {
-            "6": 25,
-            "7": 25,
-            "8": 25,
-            "9": 25
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.RemoveGameCommand::.ctor(System.String)": {
+          "Lines": {
+            "9": 2
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\Sender.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\RemoveGameStrategy.cs": {
+      "SpaceBattle.Lib.RemoveGameStrategy": {
+        "System.Object SpaceBattle.Lib.RemoveGameStrategy::Invoke(System.Object[])": {
+          "Lines": {
+            "6": 1,
+            "7": 1,
+            "9": 1,
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\RemoveGameUObjectCommand.cs": {
+      "SpaceBattle.Lib.RemoveGameUObjectCommand": {
+        "System.Void SpaceBattle.Lib.RemoveGameUObjectCommand::Execute()": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.RemoveGameUObjectCommand::.ctor(System.Int32)": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\RemoveGameUObjectStrategy.cs": {
+      "SpaceBattle.Lib.RemoveGameUObjectStrategy": {
+        "System.Object SpaceBattle.Lib.RemoveGameUObjectStrategy::Invoke(System.Object[])": {
+          "Lines": {
+            "6": 1,
+            "7": 1,
+            "9": 1,
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\RepeatConcurrentCommand.cs": {
+      "SpaceBattle.Lib.RepeatConcurrentCommand": {
+        "System.Void SpaceBattle.Lib.RepeatConcurrentCommand::Execute()": {
+          "Lines": {
+            "13": 3
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.RepeatConcurrentCommand::.ctor(SpaceBattle.Lib.ICommand)": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\SendCommand.cs": {
+      "SpaceBattle.Lib.SendCommand": {
+        "System.Object SpaceBattle.Lib.SendCommand::Invoke(System.Object[])": {
+          "Lines": {
+            "6": 28,
+            "7": 28,
+            "8": 28,
+            "9": 28
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Sender.cs": {
       "SpaceBattle.Lib.Sender": {
         "System.Void SpaceBattle.Lib.Sender::Send(SpaceBattle.Lib.ICommand)": {
           "Lines": {
-            "13": 29,
-            "14": 29,
-            "15": 29
+            "13": 32,
+            "14": 32,
+            "15": 32
           },
           "Branches": []
         },
         "System.Void SpaceBattle.Lib.Sender::.ctor(System.Collections.Concurrent.BlockingCollection`1<SpaceBattle.Lib.ICommand>)": {
           "Lines": {
-            "8": 8,
-            "9": 8,
-            "10": 8,
-            "11": 8
+            "8": 10,
+            "9": 10,
+            "10": 10,
+            "11": 10
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\ServerThread.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\ServerThread.cs": {
       "SpaceBattle.Lib.ServerThread": {
         "System.Void SpaceBattle.Lib.ServerThread::Wait()": {
           "Lines": {
-            "29": 7,
-            "30": 7,
-            "31": 7
+            "29": 9,
+            "30": 9,
+            "31": 9
           },
           "Branches": []
         },
         "System.Void SpaceBattle.Lib.ServerThread::Start()": {
           "Lines": {
-            "33": 8,
-            "34": 8,
-            "35": 8
+            "33": 10,
+            "34": 10,
+            "35": 10
           },
           "Branches": []
         },
         "System.Void SpaceBattle.Lib.ServerThread::Stop()": {
           "Lines": {
-            "37": 8,
-            "38": 8,
-            "39": 8
+            "37": 10,
+            "38": 10,
+            "39": 10
           },
           "Branches": []
         },
         "System.Void SpaceBattle.Lib.ServerThread::ExceptionHandler()": {
           "Lines": {
-            "41": 29,
-            "42": 29,
-            "44": 29,
-            "45": 29,
-            "46": 27,
+            "41": 32,
+            "42": 32,
+            "44": 32,
+            "45": 32,
+            "46": 30,
             "47": 2,
             "48": 2,
             "49": 2,
             "50": 2,
             "51": 2,
-            "52": 29
+            "52": 32
           },
           "Branches": []
         },
@@ -362,18 +798,18 @@
         },
         "System.Boolean SpaceBattle.Lib.ServerThread::Equals(System.Object)": {
           "Lines": {
-            "66": 17,
-            "67": 17,
+            "66": 19,
+            "67": 19,
             "68": 1,
             "69": 1,
-            "72": 16,
-            "73": 14,
-            "74": 14,
+            "72": 18,
+            "73": 16,
+            "74": 16,
             "77": 2,
             "78": 1,
             "79": 1,
             "82": 1,
-            "83": 17
+            "83": 19
           },
           "Branches": [
             {
@@ -390,7 +826,7 @@
               "EndOffset": 14,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 16
+              "Hits": 18
             },
             {
               "Line": 72,
@@ -398,7 +834,7 @@
               "EndOffset": 39,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 14
+              "Hits": 16
             },
             {
               "Line": 72,
@@ -436,23 +872,23 @@
         },
         "System.Void SpaceBattle.Lib.ServerThread::.ctor(SpaceBattle.Lib.IReciever,System.Object)": {
           "Lines": {
-            "7": 12,
-            "12": 12,
-            "13": 12,
-            "14": 12,
-            "15": 12,
-            "16": 27,
-            "17": 27,
-            "18": 39,
-            "19": 12,
-            "20": 8,
-            "21": 8,
-            "22": 41,
-            "23": 33,
-            "24": 33,
-            "25": 33,
-            "26": 20,
-            "27": 12
+            "7": 14,
+            "12": 14,
+            "13": 14,
+            "14": 14,
+            "15": 14,
+            "16": 30,
+            "17": 30,
+            "18": 44,
+            "19": 14,
+            "20": 10,
+            "21": 10,
+            "22": 46,
+            "23": 36,
+            "24": 36,
+            "25": 36,
+            "26": 24,
+            "27": 14
           },
           "Branches": [
             {
@@ -461,7 +897,7 @@
               "EndOffset": 34,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 33
+              "Hits": 36
             },
             {
               "Line": 22,
@@ -469,15 +905,15 @@
               "EndOffset": 71,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 8
+              "Hits": 10
             }
           ]
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\SoftStop.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\SoftStop.cs": {
       "SpaceBattle.Lib.SoftStop": {
-        "System.Object SpaceBattle.Lib.SoftStop::RunStrategy(System.Object[])": {
+        "System.Object SpaceBattle.Lib.SoftStop::Invoke(System.Object[])": {
           "Lines": {
             "8": 4,
             "9": 4,
@@ -568,27 +1004,67 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\StartThread.cs": {
-      "SpaceBattle.Lib.StartThread": {
-        "System.Object SpaceBattle.Lib.StartThread::RunStrategy(System.Object[])": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\SoftStopServerCommand.cs": {
+      "SpaceBattle.Lib.StopServerCommand": {
+        "System.Void SpaceBattle.Lib.StopServerCommand::Execute()": {
           "Lines": {
-            "9": 8,
-            "10": 8,
-            "11": 8,
-            "12": 8,
-            "13": 8,
-            "14": 8,
-            "15": 8,
+            "9": 1,
+            "10": 1,
+            "12": 1,
+            "13": 5,
+            "14": 5,
+            "15": 5,
+            "16": 5,
+            "17": 5,
+            "18": 6,
+            "19": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\StartServerCommand.cs": {
+      "SpaceBattle.Lib.StartServerCommand": {
+        "System.Void SpaceBattle.Lib.StartServerCommand::Execute()": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 5,
+            "15": 1,
+            "16": 6,
+            "17": 1
+          },
+          "Branches": []
+        },
+        "System.Void SpaceBattle.Lib.StartServerCommand::.ctor(System.Int32)": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\StartThread.cs": {
+      "SpaceBattle.Lib.StartThread": {
+        "System.Object SpaceBattle.Lib.StartThread::Invoke(System.Object[])": {
+          "Lines": {
+            "9": 10,
+            "10": 10,
+            "11": 10,
+            "12": 10,
+            "13": 10,
+            "14": 10,
+            "15": 10,
             "16": 4,
             "17": 4,
             "18": 4,
-            "20": 8,
-            "21": 8,
-            "22": 8,
-            "23": 8,
-            "24": 8,
-            "25": 8,
-            "26": 8
+            "20": 10,
+            "21": 10,
+            "22": 10,
+            "23": 10,
+            "24": 10,
+            "25": 10,
+            "26": 10
           },
           "Branches": [
             {
@@ -605,24 +1081,24 @@
               "EndOffset": 119,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 8
+              "Hits": 10
             }
           ]
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\StopServerThread.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\StopServerThread.cs": {
       "SpaceBattle.Lib.StopServerThread": {
         "System.Void SpaceBattle.Lib.StopServerThread::Execute()": {
           "Lines": {
-            "11": 9,
-            "12": 9,
-            "13": 8,
-            "14": 8,
-            "15": 8,
+            "11": 11,
+            "12": 11,
+            "13": 10,
+            "14": 10,
+            "15": 10,
             "17": 1,
             "18": 1,
-            "20": 8
+            "20": 10
           },
           "Branches": [
             {
@@ -631,7 +1107,7 @@
               "EndOffset": 21,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 8
+              "Hits": 10
             },
             {
               "Line": 12,
@@ -645,16 +1121,49 @@
         },
         "System.Void SpaceBattle.Lib.StopServerThread::.ctor(SpaceBattle.Lib.ServerThread)": {
           "Lines": {
-            "6": 8,
-            "7": 8,
-            "8": 8,
-            "9": 8
+            "6": 10,
+            "7": 10,
+            "8": 10,
+            "9": 10
           },
           "Branches": []
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\UpdateBehavior.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\UObjectProvider.cs": {
+      "SpaceBattle.Lib.UObjectProvider": {
+        "System.Object SpaceBattle.Lib.UObjectProvider::Invoke(System.Object[])": {
+          "Lines": {
+            "8": 4,
+            "9": 4,
+            "13": 4,
+            "14": 3,
+            "15": 3,
+            "17": 1,
+            "18": 3
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 13,
+              "Offset": 35,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\UpdateBehavior.cs": {
       "SpaceBattle.Lib.UpdateBehavior": {
         "System.Void SpaceBattle.Lib.UpdateBehavior::Execute()": {
           "Lines": {
@@ -698,7 +1207,7 @@
         }
       }
     },
-    "C:\\Users\\бумбурурик)\\Desktop\\OOA&P\\spacewar\\spacebattle\\SpaceBattle.Lib\\Vector.cs": {
+    "C:\\Users\\Lostg\\spacewar-1\\spacebattle\\SpaceBattle.Lib\\Vector.cs": {
       "SpaceBattle.Lib.Vector": {
         "System.Int32 SpaceBattle.Lib.Vector::get_X()": {
           "Lines": {
