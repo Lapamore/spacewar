@@ -6,4 +6,3 @@ namespace SpaceBattle.Lib
         void setProperty(string key, object value);
     }
 }
-
