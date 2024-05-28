@@ -23,44 +23,44 @@ public class BuildCodeStringAdapterTests
         var t = @"using System;
 public class {{name }}
 {
-    private object obj;
+    private object _obj;
     {{ for property in properties }}
     private {{ property.type }} {{ property.name }}{
     {{if property.set}}
     set
     {
-        Hwdtech.IoC.Resolve<SpaceBattle.Lib.ICommand>(""{{property.name}}.Set"", obj, value).Execute();
+        Hwdtech.IoC.Resolve<SpaceBattle.Lib.ICommand>(""{{property.name}}.Set"", _obj, value).Execute();
     }
     {{end}}  
     get
     {{if property.get}}
     {
-        return Hwdtech.IoC.Resolve<{{property.type}}>(""{{property.name}}.Get"", obj);
+        return Hwdtech.IoC.Resolve<{{property.type}}>(""{{property.name}}.Get"", _obj);
     } 
     {{ end }}
     }
     {{ end }}
     public {{ name }}(object obj)
     {
-        this.obj = obj;
+        _obj = obj;
     }
 }";
         var valid = @"using System;
 public class MovableAdapter
 {
-    private object obj;
+    private object _obj;
     
         private Vector Position{
         
         set
         {
-            Hwdtech.IoC.Resolve<SpaceBattle.Lib.ICommand>(""Position.Set"", obj, value).Execute();
+            Hwdtech.IoC.Resolve<SpaceBattle.Lib.ICommand>(""Position.Set"", _obj, value).Execute();
         }
           
         get
         
         {
-            return Hwdtech.IoC.Resolve<Vector>(""Position.Get"", obj);
+            return Hwdtech.IoC.Resolve<Vector>(""Position.Get"", _obj);
         } 
         
         }
@@ -70,14 +70,14 @@ public class MovableAdapter
         get
         
         {
-            return Hwdtech.IoC.Resolve<Vector>(""Velocity.Get"", obj);
+            return Hwdtech.IoC.Resolve<Vector>(""Velocity.Get"", _obj);
         } 
         
         }
         
     public MovableAdapter(object obj)
     {
-        this.obj = obj;
+        _obj = obj;
     }
 }";
         IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "TextTemplate", (object[] par) => t).Execute();
