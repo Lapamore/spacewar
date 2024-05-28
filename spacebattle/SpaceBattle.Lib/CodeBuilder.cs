@@ -6,7 +6,7 @@ public class CodeBuilder : IBuilder
 {
 
     private string _class;
-    private  List<object> _wh;
+    private List<object> _wh;
 
     public CodeBuilder(string Class)
     {
@@ -25,7 +25,7 @@ public class CodeBuilder : IBuilder
     {
         var templateText = IoC.Resolve<string>("TextTemplate");
         var template = Template.Parse(templateText);
-        var result = template.Render(new {name = _class, properties = _wh.ToArray()});
+        var result = template.Render(new { name = _class, properties = _wh.ToArray() });
         return result;
     }
 }

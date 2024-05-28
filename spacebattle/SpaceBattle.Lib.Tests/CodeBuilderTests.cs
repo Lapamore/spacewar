@@ -11,10 +11,13 @@ public class BuildCodeStringAdapterTests
         IoC.Resolve<Hwdtech.ICommand>("Scopes.Current.Set", IoC.Resolve<object>("Scopes.New", IoC.Resolve<object>("Scopes.Root"))).Execute();
         Type type = typeof(IMovable);
         var builder = new CodeBuilder(Class: "MovableAdapter");
-        type.GetProperties().ToList().ForEach( (property) => builder.adder(new {name = property.Name,
-        type = property.PropertyType.Name,
-        get = property.CanRead,
-        set = property.CanWrite}));
+        type.GetProperties().ToList().ForEach((property) => builder.adder(new
+        {
+            name = property.Name,
+            type = property.PropertyType.Name,
+            get = property.CanRead,
+            set = property.CanWrite
+        }));
 
 
         var t = @"using System;

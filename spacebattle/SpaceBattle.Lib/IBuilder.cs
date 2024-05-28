@@ -1,5 +1,6 @@
 namespace SpaceBattle.Lib;
 
-public interface IBuilder{
+public interface IBuilder
+{
     String build();
 }
