@@ -2,7 +2,7 @@ using Hwdtech;
 using Hwdtech.Ioc;
 namespace SpaceBattle.Lib.Test;
 
-public class BuildCodeStringAdapterTests
+public class CodeBuilderTests
 {
     [Fact]
     public void BuildString()
