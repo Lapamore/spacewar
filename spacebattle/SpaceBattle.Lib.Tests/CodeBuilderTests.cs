@@ -19,32 +19,6 @@ public class CodeBuilderTests
             set = property.CanWrite
         }));
 
-
-        var t = @"using System;
-public class {{name }}
-{
-    private object _obj;
-    {{ for property in properties }}
-    private {{ property.type }} {{ property.name }}{
-    {{if property.set}}
-    set
-    {
-        Hwdtech.IoC.Resolve<SpaceBattle.Lib.ICommand>(""{{property.name}}.Set"", _obj, value).Execute();
-    }
-    {{end}}  
-    get
-    {{if property.get}}
-    {
-        return Hwdtech.IoC.Resolve<{{property.type}}>(""{{property.name}}.Get"", _obj);
-    } 
-    {{ end }}
-    }
-    {{ end }}
-    public {{ name }}(object obj)
-    {
-        _obj = obj;
-    }
-}";
         var valid = @"using System;
 public class MovableAdapter
 {
@@ -80,7 +54,6 @@ public class MovableAdapter
         _obj = obj;
     }
 }";
-        IoC.Resolve<Hwdtech.ICommand>("IoC.Register", "TextTemplate", (object[] par) => t).Execute();
         var result = builder.build();
         Assert.Equal(valid, result);
     }
